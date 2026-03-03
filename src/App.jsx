@@ -10,6 +10,7 @@ import CreateOrder, {
 import AppLayout from './ui/AppLayout';
 import Error from './ui/Error';
 import { createOrder } from './services/apiRestaurant';
+import { action as updateOrderAction } from './features/order/UpdateOrder';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
